@@ -1,0 +1,16 @@
+# .github/workflows/trigger.yml
+name: Trigger called workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Nom à passer au workflow appelé"
+        required: true
+        type: string
+
+jobs:
+  call_workflow:
+    uses: ./.github/workflows/_job_build.yml
+    with:
+      name: ${{ github.event.inputs.name }}
