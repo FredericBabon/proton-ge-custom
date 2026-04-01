@@ -48,7 +48,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-          submodules: false
+          submodules: recursive
 
       - name: Patch
         run: |
